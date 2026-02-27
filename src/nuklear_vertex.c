@@ -47,6 +47,8 @@ nk_draw_list_setup(struct nk_draw_list *canvas, const struct nk_convert_config *
     canvas->cmd_offset = 0;
     canvas->cmd_count = 0;
     canvas->path_count = 0;
+    nk_buffer_reset(canvas->buffer, NK_BUFFER_FRONT);
+    nk_buffer_reset(canvas->buffer, NK_BUFFER_BACK);
 }
 NK_API const struct nk_draw_command*
 nk__draw_list_begin(const struct nk_draw_list *canvas, const struct nk_buffer *buffer)
